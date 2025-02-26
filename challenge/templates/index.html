@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Society Feedback</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            height: 50px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            background-color: #f9f9f9;
+        }
+        textarea::placeholder {
+            color: #aaa;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 10px;
+            background-color: #22CE83;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-submit:hover {
+            background-color: #3CB371;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='/images/CyberSocHD.png') }}" alt="Logo">
+        </div>
+        <h2>We appreciate your feedback.</h2>
+        <form action="/submit" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+            <label for="comment">Add a Comment:</label>
+            <textarea id="comment" name="comment" placeholder="We'd love to hear your suggestions" required></textarea>
+
+            <button type="submit" class="btn-submit">Submit Feedback</button>
+        </form>
+        <!-- IMPORTANT! DONT FORGET! -->
+        <!-- TODO: Disable /submissions/archive endpoint once data is migrated -->
+    </div>
+</body>
+</html>

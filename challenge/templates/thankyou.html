@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f7f7f7;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        .btn-submit {
+            display: inline-block;
+            padding: 10px;
+            background-color: #22CE83;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .btn-submit:hover {
+            background-color: #3CB371;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Thank You for Your Feedback!</h2>
+        <p>We appreciate your input and will review your comments shortly.</p>
+        <a href="/" class="btn-submit">Submit New Feedback</a>
+    </div>
+</body>
+</html>
